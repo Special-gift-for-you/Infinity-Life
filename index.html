@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>I love you 💖</title>
+<link rel="icon" type="image/svg+xml" href="assets/static/brand/icons/favicon.svg">
+<link rel="stylesheet" href="assets/static/themes/lavender_login.css">
+<style>
+html,body{min-height:100%;margin:0}
+.local-note{font-family:Cairo,sans-serif;color:#7b579c;font-size:12px;margin-top:12px;text-align:center}
+#localError{display:none;color:#b3265b;font-family:Cairo,sans-serif;font-size:14px;margin-top:10px}
+.login-container form{width:100%}
+.login-container input{direction:ltr}
+</style>
+</head>
+<body>
+<div class="floats-container" id="floatsContainer">
+<div class="float-item">🦋</div><div class="float-item">💜</div><div class="float-item">🦋</div>
+</div>
+<div class="login-container">
+  <div class="heart-container">
+    <div class="big-heart"></div>
+    <div class="login-content">
+      <div class="photo-circle-wrap"><div class="photo-circle">
+        <img src="assets/8.jpeg" alt="photo" decoding="async">
+      </div></div>
+      <h1 class="login-title">جاهزه؟؟</h1>
+      <p class="login-subtitle">my everything</p>
+      <form id="localLogin" autocomplete="off">
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="password" required autocomplete="off">
+        </div>
+        <button type="submit" class="login-btn">Unlock</button>
+        <div id="localError">الباسورد م صح جربي تاني 💜</div>
+      </form>
+      <div class="local-note">💜 Made with love 💜</div>
+    </div>
+  </div>
+</div>
+<script>
+document.getElementById('localLogin').addEventListener('submit',function(e){
+ e.preventDefault();
+ if(document.getElementById('password').value==='love'){
+   sessionStorage.setItem('lovelyy_unlocked','yes');
+   location.href='memories.html';
+ } else {
+   document.getElementById('localError').style.display='block';
+ }
+});
+const box=document.getElementById('floatsContainer'),icons=['🦋','💜'];
+setInterval(()=>{if(document.hidden)return;let el=document.createElement('div');el.className='float-item';el.textContent=icons[Math.random()<.5?0:1];el.style.left=Math.random()*100+'%';el.style.fontSize=(24+Math.random()*14)+'px';box.appendChild(el);setTimeout(()=>el.remove(),15000)},900);
+document.addEventListener('click',e=>{for(let i=0;i<5;i++){let p=document.createElement('span');p.textContent=icons[Math.random()<.5?0:1];p.style.cssText=`position:fixed;left:${e.clientX}px;top:${e.clientY}px;pointer-events:none;z-index:9999;transition:all .8s;`;document.body.appendChild(p);requestAnimationFrame(()=>{p.style.transform=`translate(${Math.random()*100-50}px,${Math.random()*100-50}px) scale(0)`;p.style.opacity=0});setTimeout(()=>p.remove(),850)}});
+</script>
+</body></html>

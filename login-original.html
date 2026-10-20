@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>I love you 💖</title>
+    <link rel="icon" href="assets/static/brand/icons/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="assets/static/brand/icons/favicon.svg?v=93736a7b">
+<link rel="icon" type="image/jpeg" sizes="192x192" href="assets/static/brand/icons/icon-192.jpeg?v=60979cd9">
+<link rel="apple-touch-icon" href="assets/static/brand/icons/apple-touch-icon.jpeg">
+<link rel="preload" href="assets/static/fonts/cairo-arabic-v31.woff2?v=4d90a59c" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Cairo';font-style:normal;font-weight:200 1000;font-display:swap;src:url(assets/static/fonts/cairo-arabic-v31.woff2?v=4d90a59c) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EEFF}
+@font-face{font-family:'Cairo';font-style:normal;font-weight:200 1000;font-display:swap;src:url(assets/static/fonts/cairo-latin-ext-v31.woff2?v=2ef88f3a) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Cairo';font-style:normal;font-weight:200 1000;font-display:swap;src:url(assets/static/fonts/cairo-latin-v31.woff2?v=3c959756) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
+  <link rel="stylesheet" href="assets/static/themes/lavender_login.css?v=0c5785e6">
+</head>
+<body>
+
+<div class="floats-container" id="floatsContainer">
+  <div class="float-item">🦋</div>
+  <div class="float-item">💜</div>
+  <div class="float-item">🦋</div>
+  <div class="float-item">🦋</div>
+  <div class="float-item">💜</div>
+</div>
+
+<div class="login-container">
+  <div class="heart-container">
+    <div class="big-heart"></div>
+    <div class="login-content">
+
+      
+      <div class="photo-circle-wrap">
+        <div class="photo-circle">
+          <img src="assets/8.jpeg" alt="photo" decoding="async" fetchpriority="high">
+        </div>
+      </div>
+      
+
+      <h1 class="login-title">جاهزه؟؟</h1>
+      <p class="login-subtitle">my everything </p>
+
+      
+
+      <form action="/lovelyy/kcJj6CAoTSc" method="POST" autocomplete="off">
+        <input type="hidden" name="csrf_token" value="63a8b5f53cb0ff13b3c88750c2b02aa4">
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="text" id="password" name="password" placeholder="password" required autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go">
+        </div>
+        <button type="submit" class="login-btn"> Unlock </button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script nonce="UrwUSBsEZixVv9B_4HLMMA">
+document.addEventListener('click',spawnParticles);
+document.addEventListener('touchstart',e=>{[...e.touches].forEach(t=>spawnParticles({clientX:t.clientX,clientY:t.clientY}))},{passive:true});
+function spawnParticles(e){
+  for(let i=0;i<8;i++){
+    const el=document.createElement('div');
+    el.textContent=icons[Math.floor(Math.random()*icons.length)];
+    const rad=((360/8)*i+Math.random()*20)*Math.PI/180,d=60+Math.random()*80;
+    const dx=Math.cos(rad)*d,dy=Math.sin(rad)*d;
+    el.style.cssText=`position:fixed;left:${e.clientX}px;top:${e.clientY}px;font-size:${16+Math.random()*18}px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:all .8s cubic-bezier(.25,.46,.45,.94);opacity:1;`;
+    document.body.appendChild(el);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      el.style.transform=`translate(calc(-50% + ${dx}px),calc(-50% + ${dy}px)) scale(0)`;
+      el.style.opacity='0';
+    }));
+    setTimeout(()=>el.remove(),900);
+  }
+}
+const heartIcons=['🦋','💜'];
+const MAX_FLOATS=24;   // حد أقصى للعناصر المتحركة في نفس الوقت
+setInterval(()=>{
+  if(document.hidden)return;          // التاب في الخلفية
+  const box=document.getElementById('floatsContainer');
+  if(box&&box.childElementCount>=MAX_FLOATS)return;   // اتكوّموا كفاية
+  for(let i=0;i<2;i++){
+    const el=document.createElement('div');
+    el.className='float-item';
+    el.textContent=heartIcons[Math.floor(Math.random()*heartIcons.length)];
+    el.style.left=Math.random()*100+'%';
+    el.style.fontSize=(Math.random()*14+24)+'px';
+    el.style.animationDuration=(Math.random()*5+9)+'s';
+    el.style.animationDelay=(Math.random()*.8)+'s';
+    el.style.opacity='0';
+    document.getElementById('floatsContainer').appendChild(el);
+    setTimeout(()=>el.remove(),16000);
+  }
+},700);
+</script>
+</body>
+</html>
