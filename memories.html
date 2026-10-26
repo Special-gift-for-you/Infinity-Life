@@ -591,12 +591,23 @@ function launchConfetti(){
 
 function unlock(){
   launchConfetti();
+
+  if(songs.length){
+    player.classList.remove('hidden-player');
+
+    if(!audio.src){
+      loadSong(0, false);
+    }
+
+    audio.play()
+      .then(()=>setPlaying(true))
+      .catch(()=>setPlaying(false));
+  }
+
   setTimeout(()=>{
     gate.classList.add('gone');
     document.body.classList.remove('locked');
-    if(songs.length) player.classList.remove('hidden-player');
-    armAutoplay();
-    setTimeout(()=> gate.remove(), 900);
+    setTimeout(()=>gate.remove(), 900);
   }, 550);
 }
 if(yesCard){
